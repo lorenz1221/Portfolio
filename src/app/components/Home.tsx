@@ -21,7 +21,7 @@ export function Home() {
         </h1>
 
         <p className="text-gray-300 text-2xl lg:text-3xl mb-6 font-light">
-          IT/Aspiring Web Developer
+          IT l Aspiring Web Developer
         </p>
 
         <p className="text-gray-400 text-lg mb-10 max-w-2xl leading-relaxed">

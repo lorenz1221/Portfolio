@@ -44,6 +44,10 @@ export function About() {
             and create useful web applications that provide real
             value to users.
           </p>
+          <p className="text-gray-300 leading-relaxed mt-4">
+            <span className="text-cyan-400 font-semibold">Address:</span>{" "}
+            Culajao, Roxas City, Capiz
+          </p>
         </div>
 
         {/* RIGHT – EDUCATION */}
