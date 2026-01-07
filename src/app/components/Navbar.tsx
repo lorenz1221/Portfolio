@@ -29,7 +29,7 @@ export function Navbar({ activeSection, setActiveSection }: NavbarProps) {
             </div>
             <div>
               <h2 className="text-white font-bold text-lg">Lorenz Alcazaren</h2>
-              <p className="text-cyan-400 text-xs">IT/CS Student</p>
+              <p className="text-cyan-400 text-xs">IT/Aspiring Web Developer</p>
             </div>
           </div>
 
