@@ -33,7 +33,7 @@ export function Skills() {
   ];
 
   return (
-    <div className="py-8 max-w-7xl mx-auto">
+    <section id="skills" className="py-8 max-w-7xl mx-auto">
       <h1 className="text-white text-5xl mb-3 font-bold">
         Skills & Tools
       </h1>
@@ -65,6 +65,6 @@ export function Skills() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

@@ -105,7 +105,7 @@ export function Projects() {
   }, [galleryOpen, activeImages]);
 
   return (
-    <div className="py-8 max-w-7xl mx-auto">
+    <section id="projects" className="py-8 max-w-7xl mx-auto">
       <h1 className="text-white text-5xl mb-3 font-bold">
         Projects
       </h1>
@@ -212,6 +212,6 @@ export function Projects() {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }

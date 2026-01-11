@@ -3,7 +3,7 @@ import profileImage from "../../assets/8519b1be659fc3e131cfedb61dba09614ba8c034.
 
 export function Home() {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-between gap-12 min-h-[85vh] max-w-6xl mx-auto">
+    <section id="home" className="flex flex-col lg:flex-row items-center justify-between gap-12 min-h-[85vh] max-w-6xl mx-auto">
       {/* Text Content */}
       <div className="flex-1">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full mb-6 w-fit backdrop-blur-sm">
@@ -80,6 +80,6 @@ export function Home() {
           </div>
         </a>
       </div>
-    </div>
+    </section>
   );
 }

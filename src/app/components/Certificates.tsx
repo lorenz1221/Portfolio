@@ -64,7 +64,7 @@ export function Certificates() {
   ];
 
   return (
-    <div className="py-8 max-w-7xl mx-auto">
+    <section id="certificates" className="py-8 max-w-7xl mx-auto">
       <h1 className="text-white text-5xl mb-3 font-bold">
         Certificates & Awards
       </h1>
@@ -142,6 +142,6 @@ export function Certificates() {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }

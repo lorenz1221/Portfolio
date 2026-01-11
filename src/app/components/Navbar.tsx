@@ -1,12 +1,7 @@
 import { Home, User, Award, FolderOpen, Code, Mail, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
-interface NavbarProps {
-  activeSection: string;
-  setActiveSection: (section: string) => void;
-}
-
-export function Navbar({ activeSection, setActiveSection }: NavbarProps) {
+export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
@@ -17,6 +12,11 @@ export function Navbar({ activeSection, setActiveSection }: NavbarProps) {
     { id: 'skills', label: 'Skills', icon: Code },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-slate-900/80 border-b border-cyan-500/20">
@@ -37,20 +37,19 @@ export function Navbar({ activeSection, setActiveSection }: NavbarProps) {
           <div className="hidden md:flex items-center gap-2">
             {navItems.map((item) => {
               const Icon = item.icon;
-              const isActive = activeSection === item.id;
               return (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => setActiveSection(item.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                    isActive
-                      ? 'bg-gradient-to-r from-cyan-500 to-teal-500 text-white shadow-lg shadow-cyan-500/30'
-                      : 'text-gray-300 hover:bg-white/5 hover:text-white'
-                  }`}
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.id);
+                  }}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all text-gray-300 hover:bg-white/5 hover:text-white`}
                 >
                   <Icon className="w-4 h-4" />
                   <span className="font-medium text-sm">{item.label}</span>
-                </button>
+                </a>
               );
             })}
           </div>
@@ -72,21 +71,19 @@ export function Navbar({ activeSection, setActiveSection }: NavbarProps) {
                 const Icon = item.icon;
                 const isActive = activeSection === item.id;
                 return (
-                  <button
-                    key={item.id}
-                    onClick={() => {
-                      setActiveSection(item.id);
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-                      isActive
-                        ? 'bg-gradient-to-r from-cyan-500 to-teal-500 text-white'
-                        : 'text-gray-300 hover:bg-white/5 hover:text-white'
-                    }`}
-                  >
-                    <Icon className="w-5 h-5" />
-                    <span className="font-medium">{item.label}</span>
-                  </button>
+                  <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(item.id);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-gray-300 hover:bg-white/5 hover:text-white`}
+                    >
+                      <Icon className="w-5 h-5" />
+                      <span className="font-medium">{item.label}</span>
+                    </a>
                 );
               })}
             </div>

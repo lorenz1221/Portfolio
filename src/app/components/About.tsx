@@ -2,7 +2,7 @@ import { Briefcase, GraduationCap } from "lucide-react";
 
 export function About() {
   return (
-    <div className="py-8 max-w-7xl mx-auto">
+    <section id="about" className="py-8 max-w-7xl mx-auto">
       <h1 className="text-white text-5xl mb-3 font-bold">
         About Me
       </h1>
@@ -76,6 +76,6 @@ export function About() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
